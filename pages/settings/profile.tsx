@@ -229,14 +229,14 @@ export default function Settings(props: Props) {
 
                 <div>
                   <label htmlFor="about" className="block text-sm font-medium text-gray-700">
-                    À propos
+                    {t("about")}
                   </label>
                   <div className="mt-1">
                     <textarea
                       ref={descriptionRef}
                       id="about"
                       name="about"
-                      placeholder="Racontez quelque chose à propos de vous."
+                      placeholder={t("about_description")}
                       rows={3}
                       defaultValue={props.user.bio}
                       className="block w-full mt-1 border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"></textarea>
