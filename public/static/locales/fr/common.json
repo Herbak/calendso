@@ -89,7 +89,7 @@
   "team_updated_successfully": "Équipe mis à jour avec succès",
   "your_team_updated_successfully": "Votre équipe a été mise à jour avec succès.",
   "about": "À propos",
-  "about_description": "Racontez quelque chose à propos de vous."
+  "about_description": "Racontez quelque chose à propos de vous.",
   "team_description": "Quelques phrases à propos de votre équipe. Cette description apparaîtra sur la page publique de votre équipe.",
   "members": "Membres",
   "member": "Membre",
@@ -146,5 +146,6 @@
   "new_event_subtitle": "Créer un type d'événement à votre nom ou pour votre équipe.",
   "new_team_event": "Ajouter un nouveau type d'événement d'équipe",
   "new_event_description": "Créer un nouveau type d'événement pour que des personnes puissent prendre rendez-vous avec.",
-  "event_type_created_successfully": "Le nouveau type d'événement {{eventTypeTitle}} a été créé avec succès"
+  "event_type_created_successfully": "Le nouveau type d'événement {{eventTypeTitle}} a été créé avec succès",
+  "avatar_button": "Changer l'avatar"
 }
