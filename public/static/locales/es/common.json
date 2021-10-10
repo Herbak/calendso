@@ -1,4 +1,6 @@
 {
+  "uh_oh": "Uh oh!",
+  "no_event_types_have_been_setup": "Este usuario aún no ha configurado ningún tipo de evento.",
   "edit_logo": "Cambiar la marca",
   "upload_a_logo": "Subir una marca",
   "enable": "Habilitar",
