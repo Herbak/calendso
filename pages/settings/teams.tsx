@@ -82,7 +82,7 @@ export default function Teams(props: { localeProp: string }) {
   };
 
   return (
-    <Shell heading="Teams" subtitle="Create and manage teams to use collaborative features.">
+    <Shell heading="Équipes" subtitle="Créer et gérer les équipes pour utiliser des fonctionnalités collaboratives.">
       <SettingsShell>
         {!editTeamEnabled && (
           <div className="divide-y divide-gray-200 lg:col-span-9">
@@ -93,10 +93,10 @@ export default function Teams(props: { localeProp: string }) {
                     <div className="sm:rounded-sm">
                       <div className="pb-5 pr-4 sm:pb-6">
                         <h3 className="text-lg font-medium leading-6 text-gray-900">
-                          Create a team to get started
+                          Créer une équipe pour commencer
                         </h3>
                         <div className="max-w-xl mt-2 text-sm text-gray-500">
-                          <p>Create your first team and invite other users to work together with you.</p>
+                          <p>Créez votre première équipe et invitez d'autres utilisateurs pour qu'ils travaillent avec vous.</p>
                         </div>
                       </div>
                     </div>
@@ -108,7 +108,7 @@ export default function Teams(props: { localeProp: string }) {
                     onClick={() => setShowCreateTeamModal(true)}
                     className="btn btn-white">
                     <PlusIcon className="group-hover:text-black text-gray-700 w-3.5 h-3.5 mr-2 inline-block" />
-                    New Team
+                    Nouvelle  Équipe
                   </Button>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export default function Teams(props: { localeProp: string }) {
 
                 {!!invites.length && (
                   <div>
-                    <h2 className="font-cal text-lg font-medium leading-6 text-gray-900">Open Invitations</h2>
+                    <h2 className="text-lg font-medium leading-6 text-gray-900 font-cal">Invitations Envoyées</h2>
                     <ul className="px-4 mt-4 mb-2 bg-white border divide-y divide-gray-200 rounded">
                       {invites.map((team: Team) => (
                         <TeamListItem
@@ -163,17 +163,17 @@ export default function Teams(props: { localeProp: string }) {
                   </div>
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                     <h3 className="text-lg font-medium leading-6 text-gray-900" id="modal-title">
-                      Create a new team
+                      Créer une nouvelle équipe
                     </h3>
                     <div>
-                      <p className="text-sm text-gray-400">Create a new team to collaborate with users.</p>
+                      <p className="text-sm text-gray-400">Créez une équipe pour collaborer avec d'autres utilisateurs.</p>
                     </div>
                   </div>
                 </div>
                 <form onSubmit={createTeam}>
                   <div className="mb-4">
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                      Name
+                      Nom
                     </label>
                     <input
                       ref={nameRef}
@@ -187,13 +187,13 @@ export default function Teams(props: { localeProp: string }) {
                   </div>
                   <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
                     <button type="submit" className="btn btn-primary">
-                      Create team
+                      Créer l'équipe
                     </button>
                     <button
                       onClick={() => setShowCreateTeamModal(false)}
                       type="button"
                       className="mr-2 btn btn-white">
-                      Cancel
+                      Annuler
                     </button>
                   </div>
                 </form>
