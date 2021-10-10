@@ -236,7 +236,7 @@ export default function Settings(props: Props) {
                       ref={descriptionRef}
                       id="about"
                       name="about"
-                      placeholder="A little something about yourself."
+                      placeholder="Racontez quelque chose à propos de vous."
                       rows={3}
                       defaultValue={props.user.bio}
                       className="block w-full mt-1 border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"></textarea>
@@ -262,7 +262,7 @@ export default function Settings(props: Props) {
                     <ImageUploader
                       target="avatar"
                       id="avatar-upload"
-                      buttonMsg="Change avatar"
+                      buttonMsg="Changer l'avatar"
                       handleAvatarChange={handleAvatarChange}
                       imageSrc={imageSrc}
                     />
@@ -274,19 +274,19 @@ export default function Settings(props: Props) {
                     Langue
                   </label>
                   <div className="mt-1">
-                    <Select
+                    {/* <Select
                       id="languageSelect"
                       value={selectedLanguage || locale}
                       onChange={setSelectedLanguage}
                       classNamePrefix="react-select"
                       className="block w-full mt-1 border border-gray-300 rounded-sm shadow-sm react-select-container focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                       options={props.localeOptions}
-                    />
+                    /> */}
                   </div>
                 </div>
                 <div>
                   <label htmlFor="timeZone" className="block text-sm font-medium text-gray-700">
-                    Zone temporelle
+                    Fuseau horaire
                   </label>
                   <div className="mt-1">
                     <TimezoneSelect
@@ -300,7 +300,7 @@ export default function Settings(props: Props) {
                 </div>
                 <div>
                   <label htmlFor="weekStart" className="block text-sm font-medium text-gray-700">
-                    Premier Jour de la Semaine
+                    Premier jour de la semaine
                   </label>
                   <div className="mt-1">
                     <Select
@@ -349,7 +349,7 @@ export default function Settings(props: Props) {
                     </div>
                   </div>
                 </div>
-                <div>
+                {/* <div>
                   <div className="relative flex items-start">
                     <div className="flex items-center h-5">
                       <HideBrandingInput user={props.user} hideBrandingRef={hideBrandingRef} />
@@ -362,7 +362,7 @@ export default function Settings(props: Props) {
                       <p className="text-gray-500">Hide all Cal.com branding from your public pages.</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/*<div className="flex-grow mt-6 lg:mt-0 lg:ml-6 lg:flex-grow-0 lg:flex-shrink-0">
