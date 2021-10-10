@@ -175,7 +175,7 @@ export default function Settings(props: Props) {
   }
 
   return (
-    <Shell heading="Profile" subtitle="Edit your profile information, which shows on your scheduling link.">
+    <Shell heading="Profil" subtitle="Modifiez vos informations de profil, elles se verront sur vos pages de réservation.">
       <SettingsShell>
         <form className="divide-y divide-gray-200 lg:col-span-9" onSubmit={updateProfileHandler}>
           {hasErrors && <Alert severity="error" title={errorMessage} />}
