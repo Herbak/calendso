@@ -349,7 +349,7 @@ export default function Settings(props: Props) {
                     </div>
                   </div>
                 </div>
-                {/* <div>
+                <div>
                   <div className="relative flex items-start">
                     <div className="flex items-center h-5">
                       <HideBrandingInput user={props.user} hideBrandingRef={hideBrandingRef} />
@@ -362,7 +362,7 @@ export default function Settings(props: Props) {
                       <p className="text-gray-500">Hide all Cal.com branding from your public pages.</p>
                     </div>
                   </div>
-                </div> */}
+                </div>
               </div>
 
               {/*<div className="flex-grow mt-6 lg:mt-0 lg:ml-6 lg:flex-grow-0 lg:flex-shrink-0">
@@ -404,7 +404,7 @@ export default function Settings(props: Props) {
             </div>
             <hr className="mt-8" />
             <div className="flex justify-end py-4">
-              <Button type="submit">Save</Button>
+              <Button type="submit">Sauver</Button>
             </div>
           </div>
         </form>
