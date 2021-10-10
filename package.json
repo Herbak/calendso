@@ -30,7 +30,7 @@
     "@headlessui/react": "^1.4.1",
     "@daily-co/daily-js": "^0.16.0",
     "@heroicons/react": "^1.0.4",
-    "@hookform/resolvers": "^2.8.1",
+    "@hookform/resolvers": "^2.8.2",
     "@jitsu/sdk-js": "^2.2.4",
     "@prisma/client": "^2.30.2",
     "@radix-ui/react-avatar": "^0.1.0",
