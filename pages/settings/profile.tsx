@@ -183,12 +183,12 @@ export default function Settings(props: Props) {
             <div className="flex flex-col lg:flex-row">
               <div className="flex-grow space-y-6">
                 <div className="block sm:flex">
-                  <div className="w-full sm:w-1/2 sm:mr-2 mb-6">
+                  <div className="w-full mb-6 sm:w-1/2 sm:mr-2">
                     <UsernameInput ref={usernameRef} defaultValue={props.user.username} />
                   </div>
                   <div className="w-full sm:w-1/2 sm:ml-2">
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                      Full name
+                      Nom complet
                     </label>
                     <input
                       ref={nameRef}
@@ -198,14 +198,14 @@ export default function Settings(props: Props) {
                       autoComplete="given-name"
                       placeholder="Votre nom complet"
                       required
-                      className="mt-1 block w-full border border-gray-300 rounded-sm shadow-sm py-2 px-3 focus:outline-none focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
+                      className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-sm shadow-sm focus:outline-none focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                       defaultValue={props.user.name}
                     />
                   </div>
                 </div>
 
                 <div className="block sm:flex">
-                  <div className="w-full sm:w-1/2 sm:mr-2 mb-6">
+                  <div className="w-full mb-6 sm:w-1/2 sm:mr-2">
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                       Email
                     </label>
@@ -215,13 +215,13 @@ export default function Settings(props: Props) {
                       id="email"
                       placeholder="Your email"
                       disabled
-                      className="mt-1 block w-full py-2 px-3 text-gray-500 border  border-gray-300 rounded-l-sm bg-gray-50 sm:text-sm"
+                      className="block w-full px-3 py-2 mt-1 text-gray-500 border border-gray-300 rounded-l-sm bg-gray-50 sm:text-sm"
                       defaultValue={props.user.email}
                     />
                     <p className="mt-2 text-sm text-gray-500" id="email-description">
-                      To change your email, please contact{" "}
+                      Pour changer votre email, merci de contacter{" "}
                       <a className="text-blue-500" href="mailto:help@cal.com">
-                        help@cal.com
+                        aide@avocal.fr
                       </a>
                     </p>
                   </div>
@@ -229,7 +229,7 @@ export default function Settings(props: Props) {
 
                 <div>
                   <label htmlFor="about" className="block text-sm font-medium text-gray-700">
-                    About
+                    À propos
                   </label>
                   <div className="mt-1">
                     <textarea
@@ -239,14 +239,14 @@ export default function Settings(props: Props) {
                       placeholder="A little something about yourself."
                       rows={3}
                       defaultValue={props.user.bio}
-                      className="shadow-sm focus:ring-neutral-500 focus:border-neutral-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-sm"></textarea>
+                      className="block w-full mt-1 border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"></textarea>
                   </div>
                 </div>
                 <div>
-                  <div className="mt-1 flex">
+                  <div className="flex mt-1">
                     <Avatar
                       displayName={props.user.name}
-                      className="relative rounded-full w-10 h-10"
+                      className="relative w-10 h-10 rounded-full"
                       gravatarFallbackMd5={props.user.emailMd5}
                       imageSrc={imageSrc}
                     />
@@ -256,7 +256,7 @@ export default function Settings(props: Props) {
                       name="avatar"
                       id="avatar"
                       placeholder="URL"
-                      className="mt-1 block w-full border border-gray-300 rounded-sm shadow-sm py-2 px-3 focus:outline-none focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
+                      className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-sm shadow-sm focus:outline-none focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                       defaultValue={imageSrc}
                     />
                     <ImageUploader
@@ -271,7 +271,7 @@ export default function Settings(props: Props) {
                 </div>
                 <div>
                   <label htmlFor="language" className="block text-sm font-medium text-gray-700">
-                    Language
+                    Langue
                   </label>
                   <div className="mt-1">
                     <Select
@@ -279,14 +279,14 @@ export default function Settings(props: Props) {
                       value={selectedLanguage || locale}
                       onChange={setSelectedLanguage}
                       classNamePrefix="react-select"
-                      className="react-select-container border border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 mt-1 block w-full sm:text-sm"
+                      className="block w-full mt-1 border border-gray-300 rounded-sm shadow-sm react-select-container focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                       options={props.localeOptions}
                     />
                   </div>
                 </div>
                 <div>
                   <label htmlFor="timeZone" className="block text-sm font-medium text-gray-700">
-                    Timezone
+                    Zone temporelle
                   </label>
                   <div className="mt-1">
                     <TimezoneSelect
@@ -294,13 +294,13 @@ export default function Settings(props: Props) {
                       value={selectedTimeZone}
                       onChange={setSelectedTimeZone}
                       classNamePrefix="react-select"
-                      className="react-select-container border border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 mt-1 block w-full sm:text-sm"
+                      className="block w-full mt-1 border border-gray-300 rounded-sm shadow-sm react-select-container focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                     />
                   </div>
                 </div>
                 <div>
                   <label htmlFor="weekStart" className="block text-sm font-medium text-gray-700">
-                    First Day of Week
+                    Premier Jour de la Semaine
                   </label>
                   <div className="mt-1">
                     <Select
@@ -308,10 +308,10 @@ export default function Settings(props: Props) {
                       value={selectedWeekStartDay}
                       onChange={setSelectedWeekStartDay}
                       classNamePrefix="react-select"
-                      className="react-select-container border border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 mt-1 block w-full sm:text-sm"
+                      className="block w-full mt-1 border border-gray-300 rounded-sm shadow-sm react-select-container focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                       options={[
-                        { value: "Sunday", label: "Sunday" },
-                        { value: "Monday", label: "Monday" },
+                        { value: "Sunday", label: "Dimanche" },
+                        { value: "Monday", label: "Lundi" },
                       ]}
                     />
                   </div>
@@ -327,11 +327,11 @@ export default function Settings(props: Props) {
                       defaultValue={selectedTheme || themeOptions[0]}
                       value={selectedTheme || themeOptions[0]}
                       onChange={setSelectedTheme}
-                      className="shadow-sm focus:ring-neutral-500 focus:border-neutral-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-sm"
+                      className="block w-full mt-1 border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                       options={themeOptions}
                     />
                   </div>
-                  <div className="mt-8 relative flex items-start">
+                  <div className="relative flex items-start mt-8">
                     <div className="flex items-center h-5">
                       <input
                         id="theme-adjust-os"
@@ -339,7 +339,7 @@ export default function Settings(props: Props) {
                         type="checkbox"
                         onChange={(e) => setSelectedTheme(e.target.checked ? null : themeOptions[0])}
                         checked={!selectedTheme}
-                        className="focus:ring-neutral-500 h-4 w-4 text-neutral-900 border-gray-300 rounded-sm"
+                        className="w-4 h-4 border-gray-300 rounded-sm focus:ring-neutral-500 text-neutral-900"
                       />
                     </div>
                     <div className="ml-3 text-sm">
@@ -365,25 +365,25 @@ export default function Settings(props: Props) {
                 </div>
               </div>
 
-              {/*<div className="mt-6 flex-grow lg:mt-0 lg:ml-6 lg:flex-grow-0 lg:flex-shrink-0">
+              {/*<div className="flex-grow mt-6 lg:mt-0 lg:ml-6 lg:flex-grow-0 lg:flex-shrink-0">
                 <p className="mb-2 text-sm font-medium text-gray-700" aria-hidden="true">
                   Photo
                 </p>
                 <div className="mt-1 lg:hidden">
                   <div className="flex items-center">
                     <div
-                      className="flex-shrink-0 inline-block rounded-full overflow-hidden h-12 w-12"
+                      className="flex-shrink-0 inline-block w-12 h-12 overflow-hidden rounded-full"
                       aria-hidden="true">
-                      <Avatar user={props.user} className="rounded-full h-full w-full" />
+                      <Avatar user={props.user} className="w-full h-full rounded-full" />
                     </div>
                   </div>
                 </div>
 
-                <div className="hidden relative rounded-full overflow-hidden lg:block">
+                <div className="relative hidden overflow-hidden rounded-full lg:block">
                   <Avatar
                     user={props.user}
-                    className="relative rounded-full w-40 h-40"
-                    fallback={<div className="relative bg-neutral-900 rounded-full w-40 h-40"></div>}
+                    className="relative w-40 h-40 rounded-full"
+                    fallback={<div className="relative w-40 h-40 rounded-full bg-neutral-900"></div>}
                   />
                 </div>
                 <div className="mt-4">
@@ -396,21 +396,21 @@ export default function Settings(props: Props) {
                     name="avatar"
                     id="avatar"
                     placeholder="URL"
-                    className="mt-1 block w-full border border-gray-300 rounded-sm shadow-sm py-2 px-3 focus:outline-none focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
+                    className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-sm shadow-sm focus:outline-none focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                     defaultValue={props.user.avatar}
                   />
                 </div>
               </div>*/}
             </div>
             <hr className="mt-8" />
-            <div className="py-4 flex justify-end">
+            <div className="flex justify-end py-4">
               <Button type="submit">Save</Button>
             </div>
           </div>
         </form>
         <Modal
-          heading="Profile updated successfully"
-          description="Your user profile has been updated successfully."
+          heading="Profil mis à jour avec succès"
+          description="Votre profil a été mis à jour avec succès."
           open={successModalOpen}
           handleClose={closeSuccessModal}
         />
