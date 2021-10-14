@@ -82,7 +82,9 @@ export default function Teams(props: { localeProp: string }) {
   };
 
   return (
-    <Shell heading="Équipes" subtitle="Créer et gérer les équipes pour utiliser des fonctionnalités collaboratives.">
+    <Shell
+      heading="Équipes"
+      subtitle="Créer et gérer les équipes pour utiliser des fonctionnalités collaboratives.">
       <SettingsShell>
         {!editTeamEnabled && (
           <div className="divide-y divide-gray-200 lg:col-span-9">
@@ -95,8 +97,11 @@ export default function Teams(props: { localeProp: string }) {
                         <h3 className="text-lg font-medium leading-6 text-gray-900">
                           Créer une équipe pour commencer
                         </h3>
-                        <div className="max-w-xl mt-2 text-sm text-gray-500">
-                          <p>Créez votre première équipe et invitez d'autres utilisateurs pour qu'ils travaillent avec vous.</p>
+                        <div className="mt-2 text-sm text-gray-500 max-w-prose">
+                          <p>
+                            Créez votre première équipe et invitez d'autres utilisateurs pour qu'ils
+                            travaillent avec vous.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -108,7 +113,7 @@ export default function Teams(props: { localeProp: string }) {
                     onClick={() => setShowCreateTeamModal(true)}
                     className="btn btn-white">
                     <PlusIcon className="group-hover:text-black text-gray-700 w-3.5 h-3.5 mr-2 inline-block" />
-                    Nouvelle  Équipe
+                    Nouvelle Équipe
                   </Button>
                 </div>
               </div>
@@ -123,7 +128,9 @@ export default function Teams(props: { localeProp: string }) {
 
                 {!!invites.length && (
                   <div>
-                    <h2 className="text-lg font-medium leading-6 text-gray-900 font-cal">Invitations Envoyées</h2>
+                    <h2 className="text-lg font-medium leading-6 text-gray-900 font-cal">
+                      Invitations Envoyées
+                    </h2>
                     <ul className="px-4 mt-4 mb-2 bg-white border divide-y divide-gray-200 rounded">
                       {invites.map((team: Team) => (
                         <TeamListItem
@@ -166,7 +173,9 @@ export default function Teams(props: { localeProp: string }) {
                       Créer une nouvelle équipe
                     </h3>
                     <div>
-                      <p className="text-sm text-gray-400">Créez une équipe pour collaborer avec d'autres utilisateurs.</p>
+                      <p className="text-sm text-gray-400">
+                        Créez une équipe pour collaborer avec d'autres utilisateurs.
+                      </p>
                     </div>
                   </div>
                 </div>

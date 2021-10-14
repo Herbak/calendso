@@ -16,7 +16,7 @@ function getIntegrations(credentials: CredentialData[]) {
       type: "google_calendar",
       title: "Google Calendar",
       imageSrc: "integrations/google-calendar.svg",
-      description: "For personal and business calendars",
+      description: "Liez vos calendriers personnels et professionnels",
     },
     {
       installed: !!(process.env.MS_GRAPH_CLIENT_ID && process.env.MS_GRAPH_CLIENT_SECRET),
@@ -24,7 +24,7 @@ function getIntegrations(credentials: CredentialData[]) {
       credential: credentials.find((integration) => integration.type === "office365_calendar") || null,
       title: "Office 365 / Outlook.com Calendar",
       imageSrc: "integrations/outlook.svg",
-      description: "For personal and business calendars",
+      description: "Liez vos calendriers personnels et professionnels",
     },
     {
       installed: !!(process.env.ZOOM_CLIENT_ID && process.env.ZOOM_CLIENT_SECRET),
@@ -32,15 +32,15 @@ function getIntegrations(credentials: CredentialData[]) {
       credential: credentials.find((integration) => integration.type === "zoom_video") || null,
       title: "Zoom",
       imageSrc: "integrations/zoom.svg",
-      description: "Video Conferencing",
+      description: "Visioconférence",
     },
     {
       installed: true,
       type: "caldav_calendar",
       credential: credentials.find((integration) => integration.type === "caldav_calendar") || null,
-      title: "CalDav Server",
+      title: "Server CalDav",
       imageSrc: "integrations/caldav.svg",
-      description: "For personal and business calendars",
+      description: "Liez vos calendriers personnels et professionnels",
     },
     {
       installed: true,
@@ -48,7 +48,7 @@ function getIntegrations(credentials: CredentialData[]) {
       credential: credentials.find((integration) => integration.type === "apple_calendar") || null,
       title: "Apple Calendar",
       imageSrc: "integrations/apple-calendar.svg",
-      description: "For personal and business calendars",
+      description: "Liez vos calendriers personnels et professionnels",
     },
     {
       installed: !!(
@@ -60,7 +60,7 @@ function getIntegrations(credentials: CredentialData[]) {
       credential: credentials.find((integration) => integration.type === "stripe_payment") || null,
       title: "Stripe",
       imageSrc: "integrations/stripe.svg",
-      description: "Receive payments",
+      description: "Recevez des paiements",
     },
   ];
 

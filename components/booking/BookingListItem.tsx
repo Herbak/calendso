@@ -55,13 +55,13 @@ function BookingListItem(booking: BookingItem) {
   const bookedActions = [
     {
       id: "cancel",
-      label: "Cancel",
+      label: "Annulé",
       href: `/cancel/${booking.uid}`,
       icon: XIcon,
     },
     {
       id: "reschedule",
-      label: "Reschedule",
+      label: "Replanifié",
       href: `/reschedule/${booking.uid}`,
       icon: ClockIcon,
     },
@@ -71,7 +71,7 @@ function BookingListItem(booking: BookingItem) {
 
   return (
     <tr>
-      <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap">
+      <td className="hidden px-6 py-4 sm:table-cell whitespace-nowrap">
         <div className="text-sm text-gray-900">{startTime}</div>
         <div className="text-sm text-gray-500">
           {dayjs(booking.startTime).format("HH:mm")} - {dayjs(booking.endTime).format("HH:mm")}
@@ -89,19 +89,19 @@ function BookingListItem(booking: BookingItem) {
               Unconfirmed
             </span>
           )}
-          <div className="text-sm text-gray-900 font-medium">
+          <div className="text-sm font-medium text-gray-900">
             {startTime}:{" "}
             <small className="text-sm text-gray-500">
               {dayjs(booking.startTime).format("HH:mm")} - {dayjs(booking.endTime).format("HH:mm")}
             </small>
           </div>
         </div>
-        <div className="text-sm text-neutral-900 font-medium  truncate max-w-60 md:max-w-96">
+        <div className="text-sm font-medium truncate text-neutral-900 max-w-60 md:max-w-96">
           {booking.eventType?.team && <strong>{booking.eventType.team.name}: </strong>}
           {booking.title}
         </div>
         {booking.description && (
-          <div className="text-sm text-neutral-600 truncate max-w-60 md:max-w-96">
+          <div className="text-sm truncate text-neutral-600 max-w-60 md:max-w-96">
             &quot;{booking.description}&quot;
           </div>
         )}
@@ -112,7 +112,7 @@ function BookingListItem(booking: BookingItem) {
         )}
       </td>
 
-      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+      <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
         {isUpcoming && !isCancelled ? (
           <>
             {!booking.confirmed && !booking.rejected && <TableActions actions={pendingActions} />}

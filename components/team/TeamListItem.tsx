@@ -101,7 +101,7 @@ export default function TeamListItem(props: {
               <span className="self-center h-6 px-3 py-1 text-xs text-gray-700 capitalize rounded-md bg-gray-50">
                 {t("owner")}
               </span>
-              <Tooltip content="Copy link">
+              <Tooltip content="Copier">
                 <Button
                   onClick={() => {
                     navigator.clipboard.writeText(
@@ -116,7 +116,7 @@ export default function TeamListItem(props: {
                 />
               </Tooltip>
               <Dropdown>
-                <DropdownMenuTrigger className="group w-10 h-10 p-0 border border-transparent text-neutral-400 hover:border-gray-200">
+                <DropdownMenuTrigger className="w-10 h-10 p-0 border border-transparent group text-neutral-400 hover:border-gray-200">
                   <DotsHorizontalIcon className="w-5 h-5" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>

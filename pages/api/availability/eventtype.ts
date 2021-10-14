@@ -177,11 +177,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    await prisma.webhookEventTypes.deleteMany({
-      where: {
-        eventTypeId: req.body.id,
-      },
-    });
+    // await prisma.webhookEventTypes.deleteMany({
+    //   where: {
+    //     eventTypeId: req.body.id,
+    //   },
+    // });
 
     await prisma.eventType.delete({
       where: {

@@ -4,10 +4,10 @@ import { Controller, SubmitHandler, useForm, useWatch } from "react-hook-form";
 import Select, { OptionTypeBase } from "react-select";
 
 const inputOptions: OptionTypeBase[] = [
-  { value: EventTypeCustomInputType.TEXT, label: "Text" },
-  { value: EventTypeCustomInputType.TEXTLONG, label: "Multiline Text" },
-  { value: EventTypeCustomInputType.NUMBER, label: "Number" },
-  { value: EventTypeCustomInputType.BOOL, label: "Checkbox" },
+  { value: EventTypeCustomInputType.TEXT, label: "Texte" },
+  { value: EventTypeCustomInputType.TEXTLONG, label: "Texte Long" },
+  { value: EventTypeCustomInputType.NUMBER, label: "Numéro" },
+  { value: EventTypeCustomInputType.BOOL, label: "Case à cocher" },
 ];
 
 interface Props {
@@ -35,7 +35,7 @@ const CustomInputTypeForm: FC<Props> = (props) => {
     <form onSubmit={handleSubmit(props.onSubmit)}>
       <div className="mb-2">
         <label htmlFor="type" className="block text-sm font-medium text-gray-700">
-          Input type
+          Type de champ
         </label>
         <Controller
           name="type"
@@ -80,7 +80,7 @@ const CustomInputTypeForm: FC<Props> = (props) => {
             <input
               type="text"
               id="placeholder"
-              className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+              className="block w-full border-gray-300 rounded-sm shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
               defaultValue={selectedCustomInput?.placeholder}
               {...register("placeholder")}
             />

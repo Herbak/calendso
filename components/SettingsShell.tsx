@@ -6,23 +6,23 @@ import NavTabs from "./NavTabs";
 export default function SettingsShell({ children }: { children: React.ReactNode }) {
   const tabs = [
     {
-      name: "Profile",
+      name: "Profil",
       href: "/settings/profile",
       icon: UserIcon,
     },
     {
-      name: "Security",
+      name: "Securité",
       href: "/settings/security",
       icon: KeyIcon,
     },
-    { name: "Embed & Webhooks", href: "/settings/embed", icon: CodeIcon },
+    { name: "Intégration & Webhooks", href: "/settings/embed", icon: CodeIcon },
     {
-      name: "Teams",
+      name: "Équipes",
       href: "/settings/teams",
       icon: UserGroupIcon,
     },
     {
-      name: "Billing",
+      name: "Abonnement",
       href: "/settings/billing",
       icon: CreditCardIcon,
     },

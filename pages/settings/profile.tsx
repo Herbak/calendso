@@ -146,7 +146,7 @@ export default function Settings(props: Props) {
     const enteredAvatar = avatarRef.current.value;
     const enteredTimeZone = selectedTimeZone.value;
     const enteredWeekStartDay = selectedWeekStartDay.value;
-    const enteredHideBranding = hideBrandingRef.current.checked;
+    // const enteredHideBranding = hideBrandingRef.current.checked;
     const enteredLanguage = selectedLanguage.value;
 
     // TODO: Add validation
@@ -159,7 +159,7 @@ export default function Settings(props: Props) {
         avatar: enteredAvatar,
         timeZone: enteredTimeZone,
         weekStart: asStringOrUndefined(enteredWeekStartDay),
-        hideBranding: enteredHideBranding,
+        // hideBranding: enteredHideBranding,
         theme: asStringOrNull(selectedTheme?.value),
         locale: enteredLanguage,
       })
@@ -175,7 +175,9 @@ export default function Settings(props: Props) {
   }
 
   return (
-    <Shell heading="Profil" subtitle="Modifiez vos informations de profil, elles se verront sur vos pages de réservation.">
+    <Shell
+      heading="Profil"
+      subtitle="Modifiez vos informations de profil, elles se verront sur vos pages de réservation.">
       <SettingsShell>
         <form className="divide-y divide-gray-200 lg:col-span-9" onSubmit={updateProfileHandler}>
           {hasErrors && <Alert severity="error" title={errorMessage} />}
@@ -274,14 +276,14 @@ export default function Settings(props: Props) {
                     Langue
                   </label>
                   <div className="mt-1">
-                    {/* <Select
+                    <Select
                       id="languageSelect"
                       value={selectedLanguage || locale}
                       onChange={setSelectedLanguage}
                       classNamePrefix="react-select"
                       className="block w-full mt-1 border border-gray-300 rounded-sm shadow-sm react-select-container focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                       options={props.localeOptions}
-                    /> */}
+                    />
                   </div>
                 </div>
                 <div>
@@ -318,7 +320,7 @@ export default function Settings(props: Props) {
                 </div>
                 <div>
                   <label htmlFor="theme" className="block text-sm font-medium text-gray-700">
-                    Single Theme
+                    Thème
                   </label>
                   <div className="my-1">
                     <Select
@@ -344,12 +346,13 @@ export default function Settings(props: Props) {
                     </div>
                     <div className="ml-3 text-sm">
                       <label htmlFor="theme-adjust-os" className="font-medium text-gray-700">
-                        Automatically adjust theme based on invitee preferences
+                        Ajuster automatiquement le thème en se basant sur les préférences de l'utilisateur qui
+                        prend rendez-vous
                       </label>
                     </div>
                   </div>
                 </div>
-                <div>
+                {/* <div>
                   <div className="relative flex items-start">
                     <div className="flex items-center h-5">
                       <HideBrandingInput user={props.user} hideBrandingRef={hideBrandingRef} />
@@ -362,7 +365,7 @@ export default function Settings(props: Props) {
                       <p className="text-gray-500">Hide all Cal.com branding from your public pages.</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/*<div className="flex-grow mt-6 lg:mt-0 lg:ml-6 lg:flex-grow-0 lg:flex-shrink-0">
@@ -404,7 +407,7 @@ export default function Settings(props: Props) {
             </div>
             <hr className="mt-8" />
             <div className="flex justify-end py-4">
-              <Button type="submit">Sauver</Button>
+              <Button type="submit">Enregistrer</Button>
             </div>
           </div>
         </form>
@@ -447,7 +450,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
   });
 
   if (!user) {
-    throw new Error("User seems logged in but cannot be found in the db");
+    throw new Error("L'utilisateur semble connecté mais nous ne le trouvons pas dans la base de données.");
   }
 
   return {

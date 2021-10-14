@@ -57,37 +57,39 @@ export default function Availability() {
     return <Loader />;
   }
   if (queryMe.status !== "success") {
-    return <Alert severity="error" title="Something went wrong" />;
+    return <Alert severity="error" title="Un problème est survenu" />;
   }
   const user = queryMe.data;
 
   return (
     <div>
-      <Shell heading="Availability" subtitle="Configure times when you are available for bookings.">
+      <Shell
+        heading="Disponibilités"
+        subtitle="Configurez les heures auxquelles vous êtes disponibles pour un rendez-vous.">
         <div className="flex">
           <div className="w-1/2 mr-2 bg-white border border-gray-200 rounded-sm">
             <div className="px-4 py-5 sm:p-6">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
-                Change the start and end times of your day
+              <h3 className="text-lg font-medium leading-6 text-gray-900">
+                Configurez les heures de départ et de fin de votre journée
               </h3>
-              <div className="mt-2 max-w-xl text-sm text-gray-500">
+              <div className="max-w-xl mt-2 text-sm text-gray-500">
                 <p>
-                  Currently, your day is set to start at {convertMinsToHrsMins(user.startTime)} and end at{" "}
+                  Actuellement, votre journée commence à {convertMinsToHrsMins(user.startTime)} et finit à{" "}
                   {convertMinsToHrsMins(user.endTime)}.
                 </p>
               </div>
               <div className="mt-5">
-                <Button href={formModal.hrefOn}>Change available times</Button>
+                <Button href={formModal.hrefOn}>Modifier vos disponibilités</Button>
               </div>
             </div>
           </div>
 
           <div className="w-1/2 ml-2 border border-gray-200 rounded-sm">
             <div className="px-4 py-5 sm:p-6">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
+              <h3 className="text-lg font-medium leading-6 text-gray-900">
                 Something doesn&apos;t look right?
               </h3>
-              <div className="mt-2 max-w-xl text-sm text-gray-500">
+              <div className="max-w-xl mt-2 text-sm text-gray-500">
                 <p>Troubleshoot your availability to explore why your times are showing as they are.</p>
               </div>
               <div className="mt-5">
@@ -105,17 +107,18 @@ export default function Availability() {
             router.push(isOpen ? formModal.hrefOn : formModal.hrefOff);
           }}>
           <DialogContent>
-            <div className="sm:flex sm:items-start mb-4">
-              <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-neutral-100 sm:mx-0 sm:h-10 sm:w-10">
-                <ClockIcon className="h-6 w-6 text-neutral-600" />
+            <div className="mb-4 sm:flex sm:items-start">
+              <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto rounded-full bg-neutral-100 sm:mx-0 sm:h-10 sm:w-10">
+                <ClockIcon className="w-6 h-6 text-neutral-600" />
               </div>
               <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                  Change your available times
+                <h3 className="text-lg font-medium leading-6 text-gray-900" id="modal-title">
+                  Modifier vos disponibilités
                 </h3>
                 <div>
                   <p className="text-sm text-gray-500">
-                    Set the start and end time of your day and a minimum buffer between your meetings.
+                    Définissez le début et la fin de votre journée et l'intervalle minimum entre vos
+                    rendez-vous.
                   </p>
                 </div>
               </div>
@@ -142,24 +145,24 @@ export default function Availability() {
                 await queryMe.refetch();
                 router.push(formModal.hrefOff);
 
-                showToast("The start and end times for your day have been changed successfully.", "success");
+                showToast("Le début et la fin de votre journée ont bien été enregistrés.", "success");
               })}>
               <div className="flex mb-4">
-                <label className="w-1/4 pt-2 block text-sm font-medium text-gray-700">Start time</label>
+                <label className="block w-1/4 pt-2 text-sm font-medium text-gray-700">Début</label>
                 <div>
                   <label htmlFor="startHours" className="sr-only">
-                    Hours
+                    Heures
                   </label>
                   <input
                     {...formMethods.register("startHours")}
                     id="startHours"
                     type="number"
-                    className="shadow-sm focus:ring-neutral-500 focus:border-neutral-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="block w-full border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                     placeholder="9"
                     defaultValue={convertMinsToHrsMins(user.startTime).split(":")[0]}
                   />
                 </div>
-                <span className="mx-2 pt-1">:</span>
+                <span className="pt-1 mx-2">:</span>
                 <div>
                   <label htmlFor="startMins" className="sr-only">
                     Minutes
@@ -168,26 +171,26 @@ export default function Availability() {
                     {...formMethods.register("startMins")}
                     id="startMins"
                     type="number"
-                    className="shadow-sm focus:ring-neutral-500 focus:border-neutral-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="block w-full border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                     placeholder="30"
                   />
                 </div>
               </div>
               <div className="flex mb-4">
-                <label className="w-1/4 pt-2 block text-sm font-medium text-gray-700">End time</label>
+                <label className="block w-1/4 pt-2 text-sm font-medium text-gray-700">Fin</label>
                 <div>
                   <label htmlFor="endHours" className="sr-only">
-                    Hours
+                    Heures
                   </label>
                   <input
                     {...formMethods.register("endHours")}
                     type="number"
                     id="endHours"
-                    className="shadow-sm focus:ring-neutral-500 focus:border-neutral-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="block w-full border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                     placeholder="17"
                   />
                 </div>
-                <span className="mx-2 pt-1">:</span>
+                <span className="pt-1 mx-2">:</span>
                 <div>
                   <label htmlFor="endMins" className="sr-only">
                     Minutes
@@ -196,26 +199,26 @@ export default function Availability() {
                     {...formMethods.register("endMins")}
                     type="number"
                     id="endMins"
-                    className="shadow-sm focus:ring-neutral-500 focus:border-neutral-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="block w-full border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                     placeholder="30"
                   />
                 </div>
               </div>
               <div className="flex mb-4">
-                <label className="w-1/4 pt-2 block text-sm font-medium text-gray-700">Buffer</label>
+                <label className="block w-1/4 pt-2 text-sm font-medium text-gray-700">Intervalle</label>
                 <div>
                   <label htmlFor="bufferHours" className="sr-only">
-                    Hours
+                    Heures
                   </label>
                   <input
                     {...formMethods.register("bufferHours")}
                     type="number"
                     id="bufferHours"
-                    className="shadow-sm focus:ring-neutral-500 focus:border-neutral-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="block w-full border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                     placeholder="0"
                   />
                 </div>
-                <span className="mx-2 pt-1">:</span>
+                <span className="pt-1 mx-2">:</span>
                 <div>
                   <label htmlFor="bufferMins" className="sr-only">
                     Minutes
@@ -224,17 +227,17 @@ export default function Availability() {
                     {...formMethods.register("bufferMins")}
                     type="number"
                     id="bufferMins"
-                    className="shadow-sm focus:ring-neutral-500 focus:border-neutral-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="block w-full border-gray-300 rounded-sm shadow-sm focus:ring-neutral-500 focus:border-neutral-500 sm:text-sm"
                     placeholder="10"
                   />
                 </div>
               </div>
-              <div className="mt-5 sm:mt-4 sm:flex space-x-2">
+              <div className="mt-5 space-x-2 sm:mt-4 sm:flex">
                 <Button href={formModal.hrefOff} color="secondary" tabIndex={-1}>
-                  Cancel
+                  Annuler
                 </Button>
                 <Button type="submit" loading={formMethods.formState.isSubmitting}>
-                  Update
+                  Enregistrer
                 </Button>
               </div>
             </form>

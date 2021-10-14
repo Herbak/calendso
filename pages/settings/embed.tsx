@@ -114,7 +114,9 @@ export default function Embed(props: inferSSRProps<typeof getServerSideProps>) {
           <div className="py-6 lg:pb-8 lg:col-span-9">
             <div className="mb-6">
               <h2 className="text-lg font-medium leading-6 text-gray-900 font-cal">Intégrer un iframe</h2>
-              <p className="mt-1 text-sm text-gray-500">La manière la plus simple d'intégrer Avocal sur votre site internet.</p>
+              <p className="mt-1 text-sm text-gray-500">
+                La manière la plus simple d'intégrer Avocal sur votre site internet.
+              </p>
             </div>
             <div className="grid grid-cols-2 space-x-4">
               <div>
@@ -148,11 +150,11 @@ export default function Embed(props: inferSSRProps<typeof getServerSideProps>) {
             </div>
             <hr className="mt-8" />
             <div className="flex justify-between my-6">
-              <div>
+              <div className="max-w-prose">
                 <h2 className="text-lg font-medium leading-6 text-gray-900 font-cal">Webhooks</h2>
                 <p className="mt-1 text-sm text-gray-500">
-                  Recevez les informations de prise de rendez-vous Avocal à un URL spécifique en temps-réel (lorsqu'un rendez-vous est pris ou
-                  annulé).{" "}
+                  Recevez les informations de prise de rendez-vous Avocal à un URL spécifique en temps réel
+                  (lorsqu'un rendez-vous est créé ou replanifié ou annulé).{" "}
                 </p>
               </div>
               <div>

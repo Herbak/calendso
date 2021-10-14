@@ -56,16 +56,16 @@ export default function WebhookListItem(props: {
         <div className="flex">
           {!props.webhook.active && (
             <span className="self-center h-6 px-3 py-1 text-xs text-red-700 capitalize rounded-md bg-red-50">
-              Disabled
+              Inactif
             </span>
           )}
           {!!props.webhook.active && (
             <span className="self-center h-6 px-3 py-1 text-xs text-green-700 capitalize rounded-md bg-green-50">
-              Enabled
+              Actif
             </span>
           )}
 
-          <Tooltip content="Edit Webhook">
+          <Tooltip content="Éditer">
             <Button
               onClick={() => props.onEditWebhook()}
               color="minimal"
@@ -74,7 +74,7 @@ export default function WebhookListItem(props: {
               className="self-center w-full p-2 ml-4"></Button>
           </Tooltip>
           <Dialog>
-            <Tooltip content="Delete Webhook">
+            <Tooltip content="Supprimer">
               <DialogTrigger asChild>
                 <Button
                   onClick={(e) => {
@@ -88,14 +88,14 @@ export default function WebhookListItem(props: {
             </Tooltip>
             <ConfirmationDialogContent
               variety="danger"
-              title="Delete Webhook"
-              confirmBtnText="Yes, delete webhook"
-              cancelBtnText="Cancel"
+              title="Supprimer le Webhook"
+              confirmBtnText="Oui, supprimer le webhook"
+              cancelBtnText="Annuler"
               onConfirm={() => {
                 deleteWebhook(props.webhook.id);
               }}>
-              Are you sure you want to delete this webhook? You will no longer receive Cal.com meeting data at
-              a specified URL, in real-time, when an event is scheduled or canceled .
+              Êtes-vous certain de vouloir supprimer ce webhook ? Vous ne recevrez plus les informations
+              d'Avocal à l'URL indiqué quand un rendez-vous sera créé, replanifié ou annulé.
             </ConfirmationDialogContent>
           </Dialog>
         </div>

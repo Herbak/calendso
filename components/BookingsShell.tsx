@@ -5,15 +5,15 @@ import NavTabs from "./NavTabs";
 export default function BookingsShell({ children }: { children: React.ReactNode }) {
   const tabs = [
     {
-      name: "Upcoming",
+      name: "À venir",
       href: "/bookings/upcoming",
     },
     {
-      name: "Past",
+      name: "Passé",
       href: "/bookings/past",
     },
     {
-      name: "Cancelled",
+      name: "Annulé",
       href: "/bookings/cancelled",
     },
   ];

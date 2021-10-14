@@ -61,10 +61,10 @@ const EventTypesPage = (props: PageProps) => {
     <div className="md:py-20">
       <UserCalendarIllustration />
       <div className="block mx-auto text-center md:max-w-screen-sm">
-        <h3 className="mt-2 text-xl font-bold text-neutral-900">Create your first event type</h3>
+        <h3 className="mt-2 text-xl font-bold text-neutral-900">Créez votre premier type d'événement</h3>
         <p className="mt-1 mb-2 text-md text-neutral-600">
-          Event types enable you to share links that show available times on your calendar and allow people to
-          make bookings with you.
+          Les types d'événements vous permettent de partager un lien qui montre vos disponibilités et permet
+          au destinataire de prendre rendez-vous avec vous.
         </p>
         <CreateNewEventDialog
           localeProp={locale}
@@ -151,7 +151,7 @@ const EventTypesPage = (props: PageProps) => {
                       <span className="font-medium truncate text-neutral-900">{type.title}</span>
                       {type.hidden && (
                         <span className="ml-2 inline items-center px-1.5 py-0.5 rounded-sm text-xs font-medium bg-yellow-100 text-yellow-800">
-                          Hidden
+                          Caché
                         </span>
                       )}
                       {readOnly && (
@@ -176,7 +176,7 @@ const EventTypesPage = (props: PageProps) => {
                         }))}
                       />
                     )}
-                    <Tooltip content="Preview">
+                    <Tooltip content="Prévisualiser">
                       <a
                         href={`${process.env.NEXT_PUBLIC_APP_URL}/${profile.slug}/${type.slug}`}
                         target="_blank"
@@ -186,7 +186,7 @@ const EventTypesPage = (props: PageProps) => {
                       </a>
                     </Tooltip>
 
-                    <Tooltip content="Copy link">
+                    <Tooltip content="Copier le lien">
                       <button
                         onClick={() => {
                           showToast("Link copied!", "success");
@@ -239,7 +239,7 @@ const EventTypesPage = (props: PageProps) => {
                                     className="w-4 h-4 mr-3 text-neutral-400 group-hover:text-neutral-500"
                                     aria-hidden="true"
                                   />
-                                  Preview
+                                  Voir
                                 </a>
                               )}
                             </Menu.Item>
@@ -281,12 +281,12 @@ const EventTypesPage = (props: PageProps) => {
   return (
     <div>
       <Head>
-        <title>Event Types | Cal.com</title>
+        <title>Types d'événements | Avocal.fr</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Shell
-        heading="Event Types"
-        subtitle="Create events to share for people to book on your calendar."
+        heading="Types d'événements"
+        subtitle="Créez des événements pour permettre à des personnes de prendre rendez-vous."
         CTA={
           props.eventTypes.length !== 0 && (
             <CreateNewEventDialog canAddEvents={props.canAddEvents} profiles={props.profiles} />
@@ -348,7 +348,7 @@ const CreateNewEventDialog = ({
   const createMutation = useMutation(createEventType, {
     onSuccess: async ({ eventType }) => {
       await router.push("/event-types/" + eventType.id);
-      showToast(`${eventType.title} event type created successfully`, "success");
+      showToast(`Votre événement ${eventType.title} a bien été créé`, "success");
     },
     onError: (err: HttpError) => {
       const message = `${err.statusCode}: ${err.message}`;
@@ -384,7 +384,9 @@ const CreateNewEventDialog = ({
             <Button EndIcon={ChevronDownIcon}>{t("new_event_type_btn")}</Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Create an event type under your name or a team.</DropdownMenuLabel>
+            <DropdownMenuLabel>
+              Créez un type d'événement à votre nom ou celui de votre équipe.
+            </DropdownMenuLabel>
             <DropdownMenuSeparator className="h-px bg-gray-200" />
             {profiles.map((profile) => (
               <DropdownMenuItem
